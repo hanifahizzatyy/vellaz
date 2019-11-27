@@ -4,21 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="margin-top:100px">
-                <div class="card-header" >Dashboard</div>
+            <div class="jumbotron" style="margin-top:100px">
+                <h4>Welcome {{ Auth::user()->username}}</h4>
 
-                <div class="card-body">
+                
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    Welcome {{ Auth::user()->username}}
+                    
                     <img src="{{ Auth::user()->profile_picture}}" alt="">
                 
-                </div>
-                </div>
             </div>
         </div>
     </div>
@@ -36,15 +34,14 @@
                 <div class="container">
                         <div class="row justify-content-center">
                                 <div class="col-md-8">
-                                        <div class="card" style=" margin-bottom: 20px;">
-                                            <div class="card-header">{{ $post->title }}</div>
-                                            <div class="card-body">
-                                                {{ $post->body }}
+                                        <div class="page-wrapper" style=" margin-bottom: 20px;">
+                                            <h4>{{ $post->title }}</h4>
+                                            
+                                                
                                                 @if($post->image != null)
                                                     <img src="/images/{{ $post->image }}" alt="Image" width="100%" height="600"> 
                                                 @endif
-                                            </div>
-                                            </div> 
+                                            <p>{{ $post->body }}</p>
                                         </div>
                                 </div>
                         </div>

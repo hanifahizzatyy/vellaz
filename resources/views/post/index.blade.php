@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
             <div class="col-md-8">
-                    <div class="card" style="margin-top:100px;">
-                            <div class="card-header">Home</div>
-                            <div class="card-body">
+                    <div class="page-wrapper" style="margin-top:100px; margin-bottom: 20px;">
+                            <h4>>Create Post</h4>
+                            
                                 @if (Session::has('success'))
                                 <div class="alert alert-success">
                                     <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -14,7 +14,7 @@
                                 </div>
                                 @endif
                             
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form class="form-wrapper" action="" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="panel panel-default">
                                         <div class="panel-body">
@@ -38,8 +38,7 @@
                                     </div>
                                     
                                 </form>
-                            </div>
-                            </div>
+                           
                     </div>
             </div>
         </div>
@@ -48,21 +47,18 @@
     <div class="container">
             <div class="row justify-content-center">
                     <div class="col-md-8">
-                            <div class="card" style=" margin-bottom: 20px;">
-                                <div class="card-header">{{ $post->title }}</div>
-                                <div class="card-body">
+                            <div class="page-wrapper" style=" margin-bottom: 20px;">
+                                <h4>{{ $post->title }}</h4>
                                     @if($post->image != null)
                                         <img src="/images/{{ $post->image }}" alt="Image" width="100%" height="600"> 
                                     @endif
-                                    {{ $post->body }}
-                                </div>
-                                <div class="card-footer">
+                                    <p>{{ $post->body }}</p>
+                                
+                            
                                     <a href="#" class="btn btn-link">Like</a>
                                     <a href="#" class="btn btn-link">Dislike</a>
-                                    <a href="#" class="btn btn-link">Comments</a>
-                                </div>
-                                </div> 
-                            </div>
+                                    <a href="#" class="btn btn-link">Comments</a> 
+                            </div> 
                     </div>
             </div>
     </div>

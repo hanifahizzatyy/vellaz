@@ -1514,7 +1514,7 @@ hr.invis3 {
     -moz-box-flex: 1;
     background: #202020 none repeat scroll 0 0;
     padding: 1.25rem 3rem;
-    border-radius: 0 !important;
+    border-radius: 10 !important;
 }
 
 .top-search .btn:hover,
